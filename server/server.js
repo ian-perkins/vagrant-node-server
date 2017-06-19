@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 const PORT = 8081;
 
@@ -6,7 +7,12 @@ const PORT = 8081;
 const app = express();
 
 // Establish where the static files are served from
-app.use('/', express.static(__dirname));
+app.use('/static', express.static(path.join(__dirname, 'public')));
+
+// Declare routes available and map to a response
+app.get('/', (req, res) => {
+  res.status(200).json({ data: { msg: 'Welcome to your Express powered API server' } });
+});
 
 // Error handler
 app.use((err, req, res, next) => {
