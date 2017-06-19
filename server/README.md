@@ -11,3 +11,18 @@
 - Open the following URL in a browser:
     `http://192.168.34.36:8080/`
 - This will serve static assets from the root directory (a basic `index.html` is provided)
+
+# To install Express server (static files only)
+
+- Use commit tagged `expressstatic`
+- From root directory: 
+    ```
+      vagrant ssh
+      cd /var/www/server
+      npm install
+      npm start
+    ```
+- Open the following URL in a browser:
+    `http://192.168.34.36:8081/`
+- This will serve static assets from the root directory (a basic `index.html` is provided)
+

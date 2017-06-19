@@ -1,8 +1,20 @@
-const connect = require('connect');
-const serveStatic = require('serve-static');
+const express = require('express');
 
-const PORT = 8080;
+const PORT = 8081;
 
-connect().use(serveStatic(__dirname)).listen(PORT, _ => {
-  console.log(`Server listening on port ${PORT}`);
+// Create the Express server
+const app = express();
+
+// Establish where the static files are served from
+app.use('/', express.static(__dirname));
+
+// Error handler
+app.use((err, req, res, next) => {
+  console.log('An error has happened');
+  console.log(err);
+  res.status(500).end();
+});
+
+app.listen(PORT, _ => {
+  console.log(`App is listening on port ${PORT}`);
 });
