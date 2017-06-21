@@ -39,3 +39,8 @@
     `http://192.168.34.36:8081/`
 - To serve static assets use the `/static` endpoint which will look in the `/public` directory (a basic `index.html` is provided - use the endpoint `/static` to access that file)
 - The `/` endpoint now responds with a sample JSON payload and response code 200
+
+# To update API server to using router middleware
+- Use tag `expressrouteapi`
+- Follow steps shown above
+
