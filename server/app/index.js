@@ -23,7 +23,7 @@ app.use((req, res, next) => {
 
 // Error handler - catch any thrown error
 app.use((err, req, res, next) => {
-  res.status(err.status).json({ data: { msg: err.message } });
+  res.status(err.status || 500).json({ data: { msg: err.message } });
 });
 
 module.exports = app;
